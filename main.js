@@ -23,6 +23,13 @@ function validateForm() {
         alert("NRP Harus Diisi.");
         document.forms["formPendaftaran"]["nrp"].focus();
         return false;
+    } else if (
+        document.forms["formPendaftaran"]["nrp"].value.length > 16 || 
+        document.forms["formPendaftaran"]["nrp"].value.length < 10 
+    ) {
+        alert("NRP hanya boleh 10-16 digit.");
+        document.forms["formPendaftaran"]["nrp"].focus();
+        return false;
     }
     
     if (document.forms["formPendaftaran"]["email"].value == "") {
